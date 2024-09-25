@@ -26,11 +26,11 @@ describe("Testing productsReducer", () => {
         })
     })
     test("Check should fetch all products", async () => {
-        await store.dispatch(fetchAllProducts())
-        expect(store.getState().productsReducer.products.length).toBe(5)
-        expect(store.getState().productsReducer.products).toEqual([product1, product2, product3, product4, product5])
-        expect(store.getState().productsReducer.loading).toBeFalsy()
-        expect(store.getState().productsReducer.error).toBeFalsy()
+        await store.dispatch(fetchAllProducts({ offset: 0, limit: 12 })); // Pass the required argument
+        expect(store.getState().productsReducer.products.length).toBe(5);
+        expect(store.getState().productsReducer.products).toEqual([product1, product2, product3, product4, product5]);
+        expect(store.getState().productsReducer.loading).toBeFalsy();
+        expect(store.getState().productsReducer.error).toBeFalsy();
     })
 // Ensure to pass both the file and product
 test("Check should add new product", async () => {
