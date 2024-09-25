@@ -46,7 +46,7 @@ const ProductPage = () => {
                         {singleProduct.title}
                     </Typography>
                     <Typography variant="h6" component="p">
-                        Price: {singleProduct.price}
+                        Price: &#8377; {singleProduct.price}
                     </Typography>
                     <Typography variant="body1" component="p">
                         Description: {singleProduct.description}
